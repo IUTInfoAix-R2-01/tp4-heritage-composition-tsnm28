@@ -59,7 +59,6 @@ public class Velo{
 		System.out.println(v1);
 		Velo v2 = new Velo();
 		System.out.println("the puisssance " + v1.getPuissance(14.0));
-		
 	}
 	
 }
