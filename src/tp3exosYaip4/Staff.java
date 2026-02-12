@@ -11,4 +11,11 @@ public class Staff extends Person {
 	public String getSchool() {
 		return school;
 	}
+	public void setSchool(String newSchool) {
+		this.school = newSchool;
+	}
+	public double getPay() {
+		return pay;
+	}
+	public void setPay(double newPay) {}
 }
