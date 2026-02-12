@@ -4,23 +4,26 @@ public class Velo{
 	private double braquet;
 	private static double DefautBraquet = 13.0;
 	private double diamRoue;
-	private Random  genAlea;
+	private Random  genAlea = new Random();
 	
 	public Velo(double braquet, double diamRoue) {
 		this.braquet = braquet;
 		this.diamRoue = diamRoue;
+		this.genAlea = genAlea;
 	}
 	public Velo(double braquet) {
 		this.braquet = braquet;
+		this.genAlea = genAlea;
 	}
 	public Velo() {
 		this.braquet = DefautBraquet;
+		this.genAlea = genAlea;
 	}
 	public static double getDefautBraquet() {
 		return DefautBraquet;
 	}
 	public static void setDefautBraquet(double newDefautBraquet) {
-		DefautBraquet = newDefautBraquet;
+		Velo.DefautBraquet = newDefautBraquet;
 	}
 	public Random getGenAlea() {
 		return genAlea;
@@ -44,16 +47,20 @@ public class Velo{
 		return "Velo [braquet=" + this.braquet + ", diamRoue=" + diamRoue +"]";
 	}
 	public double getPuissance(double FrequenceCoupDePedale) {
-		return FrequenceCoupDePedale * braquet * diamRoue * genAlea.nextDouble();
+		return FrequenceCoupDePedale * this.braquet * this.diamRoue * this.genAlea.nextDouble();
 	}
 	
 	public static void main(String[] args) {
 		Velo v1 = new Velo();
-		System.out.println();
+		System.out.println(v1);
+		v1.setDiamRoue(10);
+		System.out.println(v1);
+		v1.setBraquet(12.0);
+		System.out.println(v1);
+		Velo v2 = new Velo();
+		System.out.println("the puisssance " + v1.getPuissance(14.0));
+		
 	}
-	
-	
-	
 	
 }
 
